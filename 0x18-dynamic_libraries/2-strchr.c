@@ -1,20 +1,22 @@
 #include "main.h"
+
 /**
- * _memset - fill a block of memory with a specific value
- * @s: starting address of memory to be filled
- * @b: the desired value
- * @n: number of bytes to be changed
+ * _strchr - locates a character in a string
+ * @s: string
+ * @c: character
  *
- * Return: changed array with new value for n bytes
+ * Return: pointer to the first occurrence of the character c in the string s,
+ * or NULL if the character is not found
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_strchr(char *s, char c)
 {
 	int i = 0;
 
-	for (; n > 0; i++)
+
+	for (; s[i] >= '\0'; i++)
 	{
-		s[i] = b;
-		n--;
+		if (s[i] == c)
+			return (&s[i]);
 	}
-	return (s);
+	return (0);
 }
